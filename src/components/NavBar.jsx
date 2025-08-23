@@ -1,7 +1,7 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 
-function Navbar() {
+function NavBar() {
   return (
     <div className='navbar-container'>
       <div>
@@ -16,4 +16,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default NavBar
