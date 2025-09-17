@@ -1,16 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-
+import Home from './components/Home'
+import Nosotros from './components/Nosotros'
+import Error from './components/Error'
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 function App() {
 
 
   return (
     <>
-      <NavBar/>
-      <ItemListContainer mensaje="Hola, soy un mensaje!"/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/producto/:id" element={<ItemDetailContainer />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
